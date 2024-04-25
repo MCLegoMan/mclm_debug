@@ -27,6 +27,7 @@ public class ConfigScreen extends Screen {
 			if (button.id == 0) {
 				DebugConfig.instance.showMods.setValue(!DebugConfig.instance.showMods.value());
 				button.message = "Show Mod(s): " + DebugConfig.instance.showMods.value();
+				DebugConfig.instance.save();
 			}
 			if (button.id == 1) ClientData.minecraft.m_6408915(this.parent);
 		}
