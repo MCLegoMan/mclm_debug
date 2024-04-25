@@ -25,7 +25,7 @@ public abstract class OptionsScreenMixin extends Screen {
 	@Inject(method = "init", at = @At(value = "TAIL"))
 	private void save$init(CallbackInfo ci) {
 		boolean isSaveLoaded = QuiltLoader.isModLoaded("mclm_save");
-		this.buttons.add(new ButtonWidget(1000, isSaveLoaded ?  this.width / 2 + 2 : this.width / 2 - 100, this.height / 6 + 110, isSaveLoaded ? 100 : 200, 20, "Debug Config"));
+		this.buttons.add(new ButtonWidget(1000, isSaveLoaded ?  this.width / 2 + 2 : this.width / 2 - 100, this.height / 6 + 110, isSaveLoaded ? 98 : 200, 20, "Debug Config"));
 	}
 	@Inject(method = "buttonClicked", at = @At(value = "TAIL"))
 	private void save$buttonClicked(net.minecraft.client.gui.widget.ButtonWidget button, CallbackInfo ci) {
