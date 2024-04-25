@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "com.mclegoman",
+    "id": "mclm_debug",
+    "version": "${version}",
+    "metadata": {
+      "name": "Debug",
+      "description": "Adds more debug info to the show fps overlay, and makes f3 toggle show fps.",
+      "contributors": {
+        "MCLegoMan": "Owner"
+      },
+      "license": [
+        "LGPL-3.0-or-later"
+      ],
+      "contact": {},
+      "icon": "assets/mclm_debug/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {},
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.25.0"
+      },
+      {
+        "id": "minecraft",
+        "versions": "0.31"
+      }
+    ]
+  },
+  "mixin": "mclm_debug.mixins.json"
+}

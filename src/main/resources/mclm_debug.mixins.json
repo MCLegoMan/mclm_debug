@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.mclegoman.mclm_debug.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "client.GameGuiMixin",
+    "client.MinecraftClientMixin",
+    "client.OptionsScreenMixin",
+    "client.ResourcesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
