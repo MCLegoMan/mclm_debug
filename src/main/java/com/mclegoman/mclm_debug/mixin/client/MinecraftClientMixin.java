@@ -22,12 +22,12 @@ import java.util.Optional;
 @Mixin(C_5664496.class)
 public abstract class MinecraftClientMixin {
 	@Inject(method = "m_8832598", at = @At(value = "TAIL"))
-	private void save$tick(CallbackInfo ci) {
+	private void debug$tick(CallbackInfo ci) {
 		Optional<ModContainer> modContainer = QuiltLoader.getModContainer(Data.version.getID());
 		modContainer.ifPresent(Debug::onTick);
 	}
 	@Inject(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GameGui;<init>(Lnet/minecraft/client/C_5664496;II)V"))
-	private void save$run(CallbackInfo ci) {
+	private void debug$run(CallbackInfo ci) {
 		Optional<ModContainer> modContainer = QuiltLoader.getModContainer(Data.version.getID());
 		modContainer.ifPresent(Debug::onInitialize);
 	}

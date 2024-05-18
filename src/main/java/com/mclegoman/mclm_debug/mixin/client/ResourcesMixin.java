@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ResourcesMixin {
 	@Shadow private C_5664496 f_6145320;
 	@Inject(method = "<init>", at = @At(value = "TAIL"))
-	private void save$init(CallbackInfo ci) {
+	private void debug$init(CallbackInfo ci) {
 		ClientData.minecraft = this.f_6145320;
 	}
 }

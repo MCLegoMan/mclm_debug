@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GameGui.class)
 public abstract class GameGuiMixin {
 	@Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/TextRenderer;drawWithShadow(Ljava/lang/String;III)V", ordinal = 2))
-	private void save$debug(CallbackInfo ci) {
+	private void debug$debug(CallbackInfo ci) {
 		TextRenderer textRenderer = ClientData.minecraft.f_0426313;
 		if (Debug.isDebug) {
 			int y = 23;

@@ -17,4 +17,6 @@ public class DebugConfig extends ReflectiveConfig {
 	public static final DebugConfig instance = QuiltConfig.create(Data.version.getID(), Data.version.getID(), DebugConfig.class);
 	@Comment("When set to true, the debug overlay will also show loaded mods.")
 	public final TrackedValue<Boolean> showMods = this.value(false);
+	@Comment("When set to true, co-ords will be fully displayed.")
+	public final TrackedValue<Boolean> showFullCoords = this.value(false);
 }

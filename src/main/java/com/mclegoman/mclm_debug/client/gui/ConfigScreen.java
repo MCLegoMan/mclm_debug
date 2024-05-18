@@ -19,7 +19,8 @@ public class ConfigScreen extends Screen {
 	}
 	public final void init() {
 		this.buttons.add(new ButtonWidget(0, this.width / 2 - 100, this.height / 6, "Show Mod(s): " + DebugConfig.instance.showMods.value()));
-		this.buttons.add(new ButtonWidget(1, this.width / 2 - 100, this.height / 6 + 168, "Done"));
+		this.buttons.add(new ButtonWidget(1, this.width / 2 - 100, this.height / 6 + 24, "Show Full Co-Ords: " + DebugConfig.instance.showFullCoords.value()));
+		this.buttons.add(new ButtonWidget(2, this.width / 2 - 100, this.height / 6 + 168, "Done"));
 	}
 
 	protected void buttonClicked(ButtonWidget button) {
@@ -29,7 +30,12 @@ public class ConfigScreen extends Screen {
 				button.message = "Show Mod(s): " + DebugConfig.instance.showMods.value();
 				DebugConfig.instance.save();
 			}
-			if (button.id == 1) ClientData.minecraft.m_6408915(this.parent);
+			if (button.id == 1) {
+				DebugConfig.instance.showFullCoords.setValue(!DebugConfig.instance.showFullCoords.value());
+				button.message = "Show Full Co-Ords: " + DebugConfig.instance.showFullCoords.value();
+				DebugConfig.instance.save();
+			}
+			if (button.id == 2) ClientData.minecraft.m_6408915(this.parent);
 		}
 	}
 

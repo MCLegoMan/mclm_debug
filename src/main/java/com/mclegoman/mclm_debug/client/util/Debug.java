@@ -8,13 +8,22 @@
 package com.mclegoman.mclm_debug.client.util;
 
 import com.mclegoman.mclm_debug.client.data.ClientData;
+import com.mclegoman.mclm_debug.config.DebugConfig;
 import net.minecraft.client.entity.living.player.InputPlayerEntity;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.input.Keyboard;
 
 public class Debug {
 	public static String getCoords(InputPlayerEntity player) {
-		return "x:" + player.x + " y:" + player.y + " z:" + player.z;
+		float x = player.x;
+		float y = player.y;
+		float z = player.z;
+		if (!DebugConfig.instance.showFullCoords.value()) {
+			x = Float.parseFloat(String.format("%.1f", x));
+			y = Float.parseFloat(String.format("%.1f", y));
+			z = Float.parseFloat(String.format("%.1f", z));
+		}
+		return "x:" + x + " y:" + y + " z:" + z;
 	}
 	private static boolean showFpsLock;
 	public static boolean isDebug;
